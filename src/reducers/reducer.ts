@@ -22,7 +22,11 @@ export const createPage = createAsyncThunk('createPage', () => {
   return axios<TPageTemplates>(`${URL_DEFAULT}/v1/notes`, {
     ...requestOptions,
     method: 'POST',
-    data: { header: 'Untitled', body: 'Please enter text' },
+    data: {
+      header: 'Untitled',
+      body:
+        '{"blocks":[{"key":"306gj","text":"Please enter text","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}}],"entityMap":{}}',
+    },
   });
 });
 export const fetchPages = createAsyncThunk('fetchPages', () => {
@@ -52,7 +56,11 @@ export const createTemplate = createAsyncThunk('createTemplate', () => {
   return axios<TPageTemplates>(`${URL_DEFAULT}/v1/templates`, {
     ...requestOptions,
     method: 'POST',
-    data: { header: 'Untitled', body: 'Please enter text' },
+    data: {
+      header: 'Untitled',
+      body:
+        '{"blocks":[{"key":"306gj","text":"Please enter text","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}}],"entityMap":{}}',
+    },
   });
 });
 export const fetchTemplate = createAsyncThunk('fetchTemplate', () => {
