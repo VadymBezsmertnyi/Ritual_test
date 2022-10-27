@@ -10,7 +10,7 @@ import TextToolbar from 'components/TextToolbar';
 import { closeIcon } from 'images';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { updatePage, updateTemplate } from 'reducers/reducer';
+import { clearSelect, updatePage, updateTemplate } from 'reducers/reducer';
 import { AppDispatch } from 'store/store';
 import { IInitialState } from 'types/main';
 
@@ -51,6 +51,8 @@ const Details = ({ type, setType }: IDetailsProps) => {
         })
       );
     setType('');
+
+    dispatch(clearSelect());
   };
 
   return (

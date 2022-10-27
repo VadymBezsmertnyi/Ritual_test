@@ -100,6 +100,9 @@ const mainReducer = createSlice({
       state.select =
         state.templates.find((item) => item.id === action.payload) || null;
     },
+    clearSelect: (state) => {
+      state.select = null;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(createPage.fulfilled, (state, action) => {
@@ -158,4 +161,4 @@ const { actions, reducer } = mainReducer;
 
 export default reducer;
 
-export const { selectPage, selectTemplate } = actions;
+export const { selectPage, selectTemplate, clearSelect } = actions;
