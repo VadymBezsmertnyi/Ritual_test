@@ -29,7 +29,9 @@ const Details = ({ type, setType }: IDetailsProps) => {
     type === 'template'
   );
   const [selectHeader, setSelectHeader] = useState(false);
-  const [textHeader, setTextHeader] = useState(select?.header || `Untitled ${type}`);
+  const [textHeader, setTextHeader] = useState(
+    select?.header || `Untitled ${type} ${select?.id}`
+  );
 
   const classes = useStyles();
 

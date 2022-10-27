@@ -23,7 +23,7 @@ export const createPage = createAsyncThunk('createPage', () => {
     ...requestOptions,
     method: 'POST',
     data: {
-      header: 'Untitled',
+      header: 'Untitled page',
       body:
         '{"blocks":[{"key":"306gj","text":"Please enter text","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}}],"entityMap":{}}',
     },
@@ -57,7 +57,7 @@ export const createTemplate = createAsyncThunk('createTemplate', () => {
     ...requestOptions,
     method: 'POST',
     data: {
-      header: 'Untitled',
+      header: 'Untitled template',
       body:
         '{"blocks":[{"key":"306gj","text":"Please enter text","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}}],"entityMap":{}}',
     },
