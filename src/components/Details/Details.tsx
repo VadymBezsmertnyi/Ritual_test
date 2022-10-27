@@ -30,7 +30,9 @@ const Details = ({ type, setType }: IDetailsProps) => {
   );
   const [selectHeader, setSelectHeader] = useState(false);
   const [textHeader, setTextHeader] = useState(select?.header || 'Untitled');
-  const [text, setText] = useState(select?.body || '');
+  const [text, setText] = useState(
+    JSON.parse(JSON.stringify(select?.body)) || ''
+  );
 
   const classes = useStyles();
 
