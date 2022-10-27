@@ -30,15 +30,12 @@ const Details = ({ type, setType }: IDetailsProps) => {
   );
   const [selectHeader, setSelectHeader] = useState(false);
   const [textHeader, setTextHeader] = useState(select?.header || 'Untitled');
-  const [text, setText] = useState(
-    JSON.parse(JSON.stringify(select?.body)) || JSON.parse(JSON.stringify(''))
-  );
 
   const classes = useStyles();
 
   console.log(select);
 
-  const save = () => {
+  const save = (text: string) => {
     if (type === 'page')
       dispatch(
         updatePage({ id: String(select?.id), header: textHeader, body: text })
@@ -88,8 +85,7 @@ const Details = ({ type, setType }: IDetailsProps) => {
         )}
         <Divider orientation="horizontal" className={classes.lineHeader} />
       </Box>
-      <TextToolbar setValue={setText} value={text} />
-      <Button onClick={save}>Save</Button>
+      <TextToolbar setValue={save} value={select?.body || ''} />
     </Box>
   );
 };
